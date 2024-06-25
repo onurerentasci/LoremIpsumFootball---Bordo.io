@@ -1,0 +1,32 @@
+<template name="componentLeagueTitle">
+  <div class="leagueTable">
+    <table class="table-borderless w-100 mt-4 align-middle">
+      <thead>
+        <tr>
+          <th class="pb-5" scope="col"></th>
+          <th scope="col">Kulüp</th>
+          <th scope="col">P</th>
+          <th scope="col">G</th>
+          <th scope="col">B</th>
+          <th scope="col">M</th>
+          <th scope="col">Puan</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each teams}}
+        <tr class="custom-bg {{rankClass @index teams.length}}">
+          <td class="px-1 py-3 d-flex justify-content-center fw-bold">
+            {{rank}}
+          </td>
+          <td>{{team}}</td>
+          <td>{{play}}</td>
+          <td>{{win}}</td>
+          <td>{{draw}}</td>
+          <td>{{lose}}</td>
+          <td>{{point}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>
