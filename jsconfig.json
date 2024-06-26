@@ -53,6 +53,11 @@
       "meteor/blaze-hot": [
         "C:\\Users\\onure\\AppData\\Local/.meteor/packages/blaze-hot/1.1.2/web.browser/hot.js",
         "C:\\Users\\onure\\AppData\\Local/.meteor/packages/blaze-hot/1.1.2/web.browser/update-templates.js"
+      ],
+      "meteor/http": [
+        "C:\\Users\\onure\\AppData\\Local/.meteor/packages/http/2.0.0/web.browser/httpcall_client.js",
+        "C:\\Users\\onure\\AppData\\Local/.meteor/packages/http/2.0.0/web.browser/httpcall_common.js",
+        "C:\\Users\\onure\\AppData\\Local/.meteor/packages/http/2.0.0/web.browser/httpcall_server.js"
       ]
     }
   },
