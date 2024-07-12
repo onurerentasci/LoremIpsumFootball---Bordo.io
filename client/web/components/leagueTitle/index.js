@@ -1,23 +1,10 @@
-import { ReactiveVar } from "meteor/reactive-var";
 import { Template } from "meteor/templating";
 import "./index.html";
 import "./styles.css";
 
-Template.componentLeagueTitle.onCreated(function () {
-  this.teams = new ReactiveVar([]);
-
-  Meteor.call("getLeagueData", (error, result) => {
-    if (error) {
-      console.error("Method call error: ", error);
-    } else {
-      this.teams.set(result);
-    }
-  });
-});
-
 Template.componentLeagueTitle.helpers({
   teams: function () {
-    return Template.instance().teams.get();
+    return Session.get("selectedTeams") || [];
   },
   rankClass(index, TotalTeams) {
     if (index < 3) {
@@ -26,5 +13,11 @@ Template.componentLeagueTitle.helpers({
       return "bottom-three";
     }
     return "";
+  },
+});
+
+Template.TabSelecter.events({
+  "click nav-link": function (e) {
+    $("nav-link > .active").next("li").find("a").tab("show");
   },
 });
