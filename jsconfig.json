@@ -58,6 +58,9 @@
         "C:\\Users\\onure\\AppData\\Local/.meteor/packages/http/2.0.0/web.browser/httpcall_client.js",
         "C:\\Users\\onure\\AppData\\Local/.meteor/packages/http/2.0.0/web.browser/httpcall_common.js",
         "C:\\Users\\onure\\AppData\\Local/.meteor/packages/http/2.0.0/web.browser/httpcall_server.js"
+      ],
+      "meteor/session": [
+        "C:\\Users\\onure\\AppData\\Local/.meteor/packages/session/1.2.1/web.browser/session.js"
       ]
     }
   },
