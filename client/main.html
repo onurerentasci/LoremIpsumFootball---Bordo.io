@@ -9,6 +9,8 @@
       <h1>⚽ Futbol App</h1>
       {{> componentLeagueSelector}}
     </div>
+    {{#if selectedTeams.length}}
     <div>{{> componentLeagueTitle}}</div>
+    {{/if}}
   </div>
 </body>
