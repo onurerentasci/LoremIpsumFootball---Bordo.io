@@ -1,5 +1,9 @@
 import { Meteor } from "meteor/meteor";
-import { fetchLeagueData, fetchLeagueList } from "../lib/apiUtils";
+import {
+  fetchLeagueData,
+  fetchLeagueList,
+  fetchTopScorer,
+} from "../lib/apiUtils";
 
 Meteor.startup(() => {
   Meteor.methods({
@@ -8,6 +12,9 @@ Meteor.startup(() => {
     },
     getLeagueData: function (leagueKey) {
       return fetchLeagueData(leagueKey);
+    },
+    getTopScorer: function (leagueKey) {
+      return fetchTopScorer(leagueKey);
     },
   });
 });

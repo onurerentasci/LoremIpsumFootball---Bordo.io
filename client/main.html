@@ -4,6 +4,7 @@
 </head>
 
 <body>
+  {{#if isLoading}} {{> loading}} {{else}}
   <div class="container">
     <div class="d-flex justify-content-between">
       <h1>⚽ Futbol App</h1>
@@ -13,4 +14,5 @@
     <div>{{> componentLeagueTitle}}</div>
     {{/if}}
   </div>
+  {{/if}}
 </body>

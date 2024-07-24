@@ -16,8 +16,8 @@ Template.componentLeagueTitle.helpers({
   },
 });
 
-Template.TabSelecter.events({
-  "click nav-link": function (e) {
-    $("nav-link > .active").next("li").find("a").tab("show");
-  },
-});
+// Template.TabSelecter.events({
+//   "click nav-link": function (e) {
+//     $("nav-link > .active").next("li").find("a").tab("show");
+//   },
+// });
