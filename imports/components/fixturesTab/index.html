@@ -1,0 +1,44 @@
+<template name="componentFixturesTab">
+  <div id="fixtures" class="tab-pane fade leagueTable">
+    <div>
+      {{#each fixtures}}
+      <div
+        class="mb-2 rounded-3 d-flex justify-content-between align-items-center p-3"
+        style="background-color: #f9f9f9"
+      >
+        <div class="d-flex align-items-center col-2">
+          <div class="circle me-2">{{abbrev home}}</div>
+          <p class="font-weight-bold mb-0">{{home}}</p>
+        </div>
+        <div class="col-2 text-center">
+          <span class="badge rounded-pill fs-6 custom-badge">{{skor}}</span>
+        </div>
+        <div class="d-flex align-items-center col-2">
+          <div class="circle me-2">{{abbrev away}}</div>
+          <span class="font-weight-bold mb-0">{{away}}</span>
+        </div>
+        <div class="col-2 text-center">
+          <span class="badge fs-6 custom-badge-match-end">Maç Sonu</span>
+        </div>
+        <div class="col-2 text-end">
+          <span>{{formatDate date}}</span>
+        </div>
+        <div class="col-2 d-flex justify-content-end">
+          <img
+            src="/images/chart.png"
+            alt="Chart"
+            class="img-fluid me-2"
+            style="width: 20px; height: 20px"
+          />
+          <img
+            src="/images/info.png"
+            alt="Info"
+            class="img-fluid mx-2"
+            style="width: 20px; height: 20px"
+          />
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</template>

@@ -1,0 +1,21 @@
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #6c757d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.custom-badge {
+  background-color: #5742a91a;
+  color: #5742a9;
+}
+
+.custom-badge-match-end{
+    background-color: #FA0E0E1A;
+    color: #FA0E0E;
+}

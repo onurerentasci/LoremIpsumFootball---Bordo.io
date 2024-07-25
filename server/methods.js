@@ -3,6 +3,7 @@ import {
   fetchLeagueList,
   fetchLeagueData,
   fetchGoalKings,
+  fetchLeagueDataPoint,
 } from "../lib/apiUtils";
 
 Meteor.methods({
@@ -17,4 +18,7 @@ Meteor.methods({
   "fetch.topScorers"(leagueKey) {
     return fetchGoalKings(leagueKey);
   },
+  "fetch.leagueDataPoint"(leagueKey) {
+    return fetchLeagueDataPoint(leagueKey);
+  }
 });
