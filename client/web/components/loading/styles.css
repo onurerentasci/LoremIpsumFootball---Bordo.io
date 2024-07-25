@@ -11,20 +11,16 @@
   z-index: 1000;
 }
 
-.spinner {
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #3498db;
+.loader {
+  width: 60px;
+  aspect-ratio: 1;
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
+  -webkit-mask: linear-gradient(0deg, #000 55%, #0000 0) bottom/100% 18.18%;
+  background: linear-gradient(#3f5fff 0 0) bottom/100% 0% no-repeat #ddd;
+  animation: l8 2s infinite steps(7);
 }
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
+@keyframes l8 {
   100% {
-    transform: rotate(360deg);
+    background-size: 100% 115%;
   }
 }

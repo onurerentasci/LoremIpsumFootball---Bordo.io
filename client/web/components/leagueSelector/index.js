@@ -5,8 +5,9 @@ import "./index.html";
 Template.componentLeagueSelector.onCreated(function () {
   this.leagues = new ReactiveVar([]);
   this.selectedLeagueName = new ReactiveVar("");
+  this.topScorers = new ReactiveVar([]);
 
-  Meteor.call("getLeagueList", (error, result) => {
+  Meteor.call("fetch.leagueList", (error, result) => {
     if (error) {
       console.error("Method call error:", error);
     } else {
@@ -16,7 +17,7 @@ Template.componentLeagueSelector.onCreated(function () {
       if (superLig) {
         this.selectedLeagueName.set(superLig.league);
 
-        Meteor.call("getLeagueData", "super-lig", (error, result) => {
+        Meteor.call("fetch.leagueData", "super-lig", (error, result) => {
           if (error) {
             console.error("Method call error:", error);
           } else {
@@ -29,11 +30,14 @@ Template.componentLeagueSelector.onCreated(function () {
 });
 
 Template.componentLeagueSelector.helpers({
-  leagues: function () {
+  leagues() {
     return Template.instance().leagues.get();
   },
-  selectedLeagueName: function () {
+  selectedLeagueName() {
     return Template.instance().selectedLeagueName.get();
+  },
+  topScorers() {
+    return Template.instance().topScorers.get();
   },
 });
 
@@ -45,11 +49,19 @@ Template.componentLeagueSelector.events({
 
     template.selectedLeagueName.set(leagueName);
 
-    Meteor.call("getLeagueData", leagueKey, (error, result) => {
+    Meteor.call("fetch.leagueData", leagueKey, (error, result) => {
       if (error) {
         console.error("Method call error:", error);
       } else {
         Session.set("selectedTeams", result);
+      }
+    });
+
+    Meteor.call("fetch.topScorers", leagueKey, (error, result) => {
+      if (error) {
+        console.error("Method call error:", error);
+      } else {
+        template.topScorers.set(result);
       }
     });
   },

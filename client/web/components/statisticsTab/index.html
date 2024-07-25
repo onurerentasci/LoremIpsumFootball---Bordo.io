@@ -1,0 +1,30 @@
+<template name="componentStatisticsTab">
+  <div id="topScorers" class="tab-pane fade leagueTable">
+    <div class="d-flex col justify-content-between">
+      <div class="col-1 fw-bolder px-3 mb-3"></div>
+      <div class="col-6 fw-bolder px-3 mb-3">Oyuncu</div>
+      <div class="col-1 fw-bolder px-3 mb-3 d-flex justify-content-center">
+        Kulüp
+      </div>
+      <div class="col-1 fw-bolder px-3 mb-3 d-flex justify-content-center">
+        Goller
+      </div>
+    </div>
+    <div>
+      {{#each GetTopScorers}}
+      <div class="mb-2 rounded-3 custom-bg d-flex justify-content-between">
+        <div class="col-1 px-3 py-3 fw-bold d-flex justify-content-center">
+          {{@index}}
+        </div>
+        <div class="col-6 px-3 py-3">{{name}}</div>
+        <div class="col-1 px-3 py-3 d-flex justify-content-center">
+          {{team}}
+        </div>
+        <div class="col-1 px-3 py-3 d-flex justify-content-center">
+          {{goals}}
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</template>

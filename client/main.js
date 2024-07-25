@@ -16,9 +16,26 @@ import "../client/web/components/leagueSelector/index.js";
 import "../client/web/components/loading/index.html";
 import "../client/web/components/loading/styles.css";
 
+import "../client/web/components/leagueNavbar/index.html";
+import "../client/web/components/leagueNavbar/index.js";
+import "../client/web/components/leagueNavbar/styles.css";
+
+import "../client/web/components/fixturesTab/index.html";
+import "../client/web/components/fixturesTab/index.js";
+import "../client/web/components/fixturesTab/styles.css";
+
+import "../client/web/components/standingsTab/index.html";
+import "../client/web/components/standingsTab/index.js";
+import "../client/web/components/standingsTab/styles.css";
+
+import "../client/web/components/statisticsTab/index.html";
+import "../client/web/components/statisticsTab/index.js";
+import "../client/web/components/statisticsTab/styles.css";
+
 import { ReactiveVar } from "meteor/reactive-var";
 
 const isLoading = new ReactiveVar(true);
+const goalKings = new ReactiveVar([]);
 
 Template.body.onCreated(function () {
   Meteor.setTimeout(() => {
@@ -39,6 +56,14 @@ Template.body.onCreated(function () {
               Session.set("selectedTeams", result);
             }
           });
+
+          Meteor.call("getTopScorers", "super-lig", (error, result) => {
+            if (error) {
+              console.error("Method call error:", error);
+            } else {
+              goalKings.set(result);
+            }
+          });
         }
       }
     });
@@ -51,5 +76,8 @@ Template.body.helpers({
   },
   isLoading: function () {
     return isLoading.get();
+  },
+  goalKings: function () {
+    return goalKings.get();
   },
 });

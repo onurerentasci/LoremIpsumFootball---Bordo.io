@@ -1,0 +1,20 @@
+<template name="componentFixturesTab">
+  <div id="fixtures" class="tab-pane fade leagueTable">
+    <div class="d-flex col justify-content-between">
+      <div class="col-3 fw-bolder px-3 mb-3">Ev Sahibi</div>
+      <div class="col-3 fw-bolder px-3 mb-3">Deplasman</div>
+      <div class="col-3 fw-bolder px-3 mb-3">Skor</div>
+      <div class="col-3 fw-bolder px-3 mb-3">Tarih</div>
+    </div>
+    <div>
+      {{#each fixtures}}
+      <div class="mb-2 rounded-3 custom-bg d-flex justify-content-between">
+        <div class="col-3 px-3 py-3">{{home}}</div>
+        <div class="col-3 px-3 py-3">{{away}}</div>
+        <div class="col-3 px-3 py-3">{{score}}</div>
+        <div class="col-3 px-3 py-3">{{date}}</div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</template>
