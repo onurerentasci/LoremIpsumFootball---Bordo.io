@@ -7,7 +7,6 @@ Template.componentLeagueSelector.onCreated(function () {
   this.selectedLeagueName = new ReactiveVar("Almanya Bundesliga");
   setSelectedTeam('almanya-bundesliga');
 
-  // Ligi listelemek için Meteor metodunu çağır
   Meteor.call('fetch.leagueList', (err, res) => {
     if (err) {
       console.error('Error fetching league list:', err);
@@ -32,18 +31,14 @@ Template.componentLeagueSelector.events({
     const leagueKey = event.currentTarget.dataset.key;
     const leagueName = event.currentTarget.textContent;
 
-    // Seçili ligi güncelle
     instance.selectedLeagueName.set(leagueName);
 
-    // Seçilen ligi Session değişkenine kaydet
     setSelectedTeam(leagueKey);
 
-    // Burada fetchLeagueData veya fetchGoalKings gibi diğer işlemleri başlatabilirsiniz
     Meteor.call('fetch.leagueData', leagueKey, (err, res) => {
       if (err) {
         console.error('Error fetching league data:', err);
       } else {
-        // Fikstür tabını güncelle
         setLeagueData(res);
       }
     });

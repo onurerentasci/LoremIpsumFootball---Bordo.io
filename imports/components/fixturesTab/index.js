@@ -2,7 +2,6 @@ import { Template } from "meteor/templating";
 import { ReactiveVar } from "meteor/reactive-var";
 import { getLeagueData } from "/lib/datas";
 
-// componentFixturesTab template'i için onCreated metodu
 Template.componentFixturesTab.onCreated(function () {});
 
 Template.componentFixturesTab.helpers({
